@@ -29,7 +29,7 @@ exports.create = function(self, streamURL, hostname, params) {
 
       // if it's a movie
       if (!params.show || params.show !== '1') {
-        request('https://ytsto.xyz/api/v2/movie_details.json?with_images=true&movie_id=' + params.id, function (error, response, body) {
+        request('https://yts.nz/api/v2/movie_details.json?with_images=true&movie_id=' + params.id, function (error, response, body) {
           if (!error && response.statusCode == 200) {
             var yifyResponse = JSON.parse(body);
 
@@ -110,7 +110,7 @@ exports.create = function(self, streamURL, hostname, params) {
       }
       // else if it's a tv show
       else {
-        request('http://eztvapi.re/show/' + params.id, function (error, response, body) {
+        request('https://eztvapi.ml/show/' + params.id, function (error, response, body) {
           if (!error) {
             var show = JSON.parse(body);
 
